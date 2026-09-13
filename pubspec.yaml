@@ -35,6 +35,11 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.8
   get_it: ^9.2.1
+  animated_splash_screen: ^1.3.0
+  lottie: ^3.5.1
+  provider: ^6.1.5+1
+  package_info_plus: ^9.0.1
+  shared_preferences: ^2.5.5
 
 dev_dependencies:
   flutter_test:
@@ -60,11 +65,11 @@ flutter:
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
-  # assets:
-    # - assets/animations/
+  assets:
+    - assets/animations/
     # - assets/images/
     # - assets/images/logo/logo.svg
-    # - assets/translate_dictionaries/
+    - assets/translate_dictionaries/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images

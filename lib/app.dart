@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pragma_test/presentation/ui/routes/route_generator.dart';
 import 'flavors/flavors.dart';
 
 class App extends StatelessWidget {
@@ -9,7 +10,7 @@ class App extends StatelessWidget {
     return MaterialApp(
       title: F.title,
       theme: ThemeData(primarySwatch: Colors.blue),
-      home: Placeholder(),
+      onGenerateRoute: RouteGenerator.generateRoute,
     );
   }
 

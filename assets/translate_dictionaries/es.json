@@ -1,0 +1,23 @@
+{
+    "notFoundWidgetNotResults": "No se han encontrado resultados",
+    "notFoundWidgetGoBack": "Go Back",
+
+    "splashPageTitle": "CatBreeds",
+
+    "catListPageTitle": "Gatos en CatBreeds",
+
+    "detailedCatPageDescription": "Descripción",
+    "detailedCatPageOrigin": "Origen",
+    "detailedCatPageTemperament": "Temperamento",
+    "detailedCatPageAdaptability": "Adaptabilidad",
+    "detailedCatPageItelligence": "Inteligencia",
+    "detailedCatPageAffectionLevel": "N. afecto",
+    "detailedCatPageChildFriendly": "Amigable",
+    "detailedCatPageLifeSpan": "Esperanza de vida",
+    "detailedCatPageWeight": "Peso",
+    "detailedCatPageCountryCode": "Código de país",
+
+    "noConnectionError": "Sin conexión a internet",
+    "catNotFound": "No se ha encontrado ningún gato",
+    "errorGettingCats": "Error al obtener los gatos"
+}
