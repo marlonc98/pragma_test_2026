@@ -3,7 +3,7 @@ import 'package:package_info_plus/package_info_plus.dart';
 import 'package:pragma_test/domain/use_cases/default/load_use_case.dart';
 import 'package:pragma_test/presentation/ui/pages/cats/cats_page.dart';
 import 'package:pragma_test/presentation/ui/pages/splash/splash_page.dart';
-import 'package:pragma_test/presentation/ui/pages/wrapper/view_model.dart';
+import 'package:pragma_test/presentation/ui/utils/view_model.dart';
 
 class SplashPageViewModel extends ViewModel<SplashPage> {
   SplashPageViewModel({
@@ -12,6 +12,7 @@ class SplashPageViewModel extends ViewModel<SplashPage> {
     required super.isMounted,
   }) {
     _loadVersionAndBuildNumber();
+    _load();
   }
 
   PackageInfo? packageInfo;
@@ -21,7 +22,7 @@ class SplashPageViewModel extends ViewModel<SplashPage> {
     notifyListeners();
   }
 
-  Future<void> load() async {
+  Future<void> _load() async {
     await Future.wait([
      Future.delayed(const Duration(milliseconds: 300)),
      getIt.get<LoadUseCase>().call()

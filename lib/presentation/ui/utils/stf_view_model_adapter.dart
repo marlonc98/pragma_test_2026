@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:pragma_test/presentation/ui/pages/wrapper/view_model.dart';
+import 'package:pragma_test/presentation/ui/utils/view_model.dart';
 import 'package:provider/provider.dart';
 
 class StfViewModelAdapter<T extends ViewModel> extends StatefulWidget {
