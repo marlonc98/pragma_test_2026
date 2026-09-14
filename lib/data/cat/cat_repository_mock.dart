@@ -1,3 +1,4 @@
+import 'package:pragma_test/domain/contstants/errors_constants.dart';
 import 'package:pragma_test/domain/entities/cat_entity.dart';
 import 'package:pragma_test/domain/entities/petition_status_entity.dart';
 import 'package:pragma_test/domain/entities/search_result_entity.dart';
@@ -16,7 +17,7 @@ class CatRepositoryMock extends CatRepository {
   @override
   Future<PetitionStatusEntity<CatEntity>> getCatById(String id) async {
     await Future.delayed(const Duration(seconds: 1));
-    return PetitionStatusEntity.success(data: fakeCat);
+    return PetitionStatusEntity.fromError(ErrorsConstants.errorGettingCats);
   }
 
   @override

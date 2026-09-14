@@ -13,37 +13,39 @@ class CatsPageScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final vm = context.watch<CatsPageViewModel>();
-    return CustomScrollView(
-      slivers: [
-        SearcherAppBarWidget(
-          title: vm.localization.translate(TextConstants.catListPageTitle),
-          onSearch: vm.handleOnChangeQuery,
-          waitSearch: true,
-        ),
-        SliverFillRemaining(
-          child: Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: PagingListener<int, CatEntity>(
-              controller: vm.pagingController,
-              builder: (context, state, fetchNextPage) =>
-                  PagedListView<int, CatEntity>(
-                    padding: const EdgeInsets.all(0),
-                    state: state,
-                    fetchNextPage: fetchNextPage,
-                    builderDelegate: PagedChildBuilderDelegate<CatEntity>(
-                      itemBuilder: (context, item, index) => Container(
-                        margin: const EdgeInsets.only(bottom: 8),
-                        child: CatCardWidget(
-                          cat: item,
-                          onTap: () => vm.handleTapCatCard(item),
+    return Scaffold(
+      body: CustomScrollView(
+        slivers: [
+          SearcherAppBarWidget(
+            title: vm.localization.translate(TextConstants.catListPageTitle),
+            onSearch: vm.handleOnChangeQuery,
+            waitSearch: true,
+          ),
+          SliverFillRemaining(
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: PagingListener<int, CatEntity>(
+                controller: vm.pagingController,
+                builder: (context, state, fetchNextPage) =>
+                    PagedListView<int, CatEntity>(
+                      padding: const EdgeInsets.all(0),
+                      state: state,
+                      fetchNextPage: fetchNextPage,
+                      builderDelegate: PagedChildBuilderDelegate<CatEntity>(
+                        itemBuilder: (context, item, index) => Container(
+                          margin: const EdgeInsets.only(bottom: 8),
+                          child: CatCardWidget(
+                            cat: item,
+                            onTap: () => vm.handleTapCatCard(item),
+                          ),
                         ),
                       ),
                     ),
-                  ),
+              ),
             ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }

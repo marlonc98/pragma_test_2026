@@ -52,7 +52,6 @@ class SearcherAppBarWidgetState extends State<SearcherAppBarWidget> {
   @override
   SliverAppBar build(BuildContext context) {
     return SliverAppBar(
-      backgroundColor: Theme.of(context).colorScheme.primary,
       floating: true,
       title: searching
           ? Row(

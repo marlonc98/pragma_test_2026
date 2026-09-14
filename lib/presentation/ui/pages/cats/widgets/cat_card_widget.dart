@@ -9,10 +9,10 @@ class CatCardWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return InkWell(
-      onTap: onTap,
-      child: Card(
-        clipBehavior: Clip.antiAlias,
+    return Card(
+      clipBehavior: Clip.antiAlias,
+      child: InkWell(
+        onTap: onTap,
         child: Stack(
           children: [
             ImageNetworkWithLoadWidget(

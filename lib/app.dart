@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pragma_test/presentation/ui/routes/route_generator.dart';
+import 'package:pragma_test/presentation/ui/theme/dark_theme.dart';
+import 'package:pragma_test/presentation/ui/theme/light_theme.dart';
 import 'flavors/flavors.dart';
 
 class App extends StatelessWidget {
@@ -9,8 +11,9 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: F.title,
-      theme: ThemeData(primarySwatch: Colors.blue),
+      theme: lightTheme,
       onGenerateRoute: RouteGenerator.generateRoute,
+      darkTheme: darkTheme,
     );
   }
 

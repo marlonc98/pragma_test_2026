@@ -5,6 +5,7 @@ class ErrorsConstants {
   static const String timeout = "timeout";
 
   static const String errorGettingCats = "errorGettingCats";
+  static const String errorGettingCat = "errorGettingCat";
 
 
 

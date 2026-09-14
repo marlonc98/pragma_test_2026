@@ -24,7 +24,7 @@ class SplashPageViewModel extends ViewModel<SplashPage> {
 
   Future<void> _load() async {
     await Future.wait([
-     Future.delayed(const Duration(milliseconds: 300)),
+     Future.delayed(const Duration(milliseconds: 500)),
      getIt.get<LoadUseCase>().call()
      
     ]);

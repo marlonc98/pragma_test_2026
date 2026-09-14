@@ -7,6 +7,7 @@ import 'package:pragma_test/data/localization/localization_repository_mock.dart'
 import 'package:pragma_test/domain/repositories/cat_repository.dart';
 import 'package:pragma_test/domain/repositories/localization_repository.dart';
 import 'package:pragma_test/domain/states/localization_state.dart';
+import 'package:pragma_test/domain/use_cases/cat/get_cat_by_id_use_case.dart';
 import 'package:pragma_test/domain/use_cases/cat/search_cats_use_case.dart';
 import 'package:pragma_test/domain/use_cases/default/load_use_case.dart';
 import 'package:pragma_test/flavors/flavors.dart';
@@ -53,6 +54,11 @@ class DependencyInjection {
     //#region ------------- use cases -------------------------//
     getIt.registerSingleton<SearchCatsUseCase>(
       SearchCatsUseCase(
+        catRepository: getIt.get<CatRepository>(),
+      ),
+    );
+    getIt.registerSingleton<GetCatByIdUseCase>(
+      GetCatByIdUseCase(
         catRepository: getIt.get<CatRepository>(),
       ),
     );

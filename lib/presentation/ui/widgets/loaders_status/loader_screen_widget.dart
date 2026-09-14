@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:pragma_test/domain/entities/petition_status_entity.dart';
-import 'package:pragma_test/domain/states/localization_state.dart';
+import 'package:pragma_test/presentation/states/localization_state_impl.dart';
 import 'package:pragma_test/presentation/ui/widgets/loaders_status/error_loading_widget.dart';
 import 'package:pragma_test/presentation/ui/widgets/loaders_status/loading_widget.dart';
 import 'package:pragma_test/presentation/ui/widgets/loaders_status/no_results_small_widget.dart';
@@ -115,7 +115,7 @@ class LoaderScreenWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final i18n = Provider.of<LocalizationState>(context).translate;
+    final i18n = context.watch<LocalizationStateImpl>().translate;
     final data =
         status.data != null &&
             status.data.runtimeType.toString() == 'SearchResultEntity'

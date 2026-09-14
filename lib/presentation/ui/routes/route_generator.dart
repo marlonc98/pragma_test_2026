@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:pragma_test/presentation/ui/pages/cats/cat/detailed/detailed_cat_page.dart';
 import 'package:pragma_test/presentation/ui/pages/cats/cats_page.dart';
-import 'package:pragma_test/presentation/ui/pages/cats/detailed/detailed_cat_page.dart';
 import 'package:pragma_test/presentation/ui/pages/splash/splash_page.dart';
 
 class RouteGenerator {

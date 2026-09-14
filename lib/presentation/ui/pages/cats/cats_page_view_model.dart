@@ -3,8 +3,8 @@ import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';
 import 'package:pragma_test/domain/contstants/errors_constants.dart';
 import 'package:pragma_test/domain/entities/cat_entity.dart';
 import 'package:pragma_test/domain/use_cases/cat/search_cats_use_case.dart';
+import 'package:pragma_test/presentation/ui/pages/cats/cat/detailed/detailed_cat_page.dart';
 import 'package:pragma_test/presentation/ui/pages/cats/cats_page.dart';
-import 'package:pragma_test/presentation/ui/pages/cats/detailed/detailed_cat_page.dart';
 import 'package:pragma_test/presentation/ui/utils/view_model.dart';
 import 'package:pragma_test/presentation/ui/widgets/show_modal.dart';
 
