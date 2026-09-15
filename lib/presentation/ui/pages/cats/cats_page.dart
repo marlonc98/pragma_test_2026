@@ -5,7 +5,7 @@ import 'package:pragma_test/presentation/ui/utils/stf_view_model_adapter.dart';
 
 class CatsPage extends StatefulWidget {
   static const String route = "/cats";
-  const new({super.key});
+  const CatsPage({super.key});
 
   @override
   State<CatsPage> createState() => _CatsPageState();

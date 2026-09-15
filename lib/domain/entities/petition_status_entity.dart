@@ -31,26 +31,20 @@ class PetitionStatusEntity<T> {
     return PetitionStatusEntity(status: PetitionStatus.loading);
   }
 
+  /// Expects [error] to already be a classified key from [ErrorsConstants]
+  /// (the data layer, e.g. RestApi, is responsible for mapping transport
+  /// exceptions like TimeoutException/SocketException/HTTP status codes to
+  /// one of those keys before it reaches the domain layer). Anything else
+  /// falls back to [defaultError] so raw exception text never leaks to the UI.
   factory PetitionStatusEntity.fromError(dynamic error,
       {String? defaultError}) {
     String? errorGetted;
-    if (error.toString().contains("Operation timed out") ||
-        error.toString().contains("SocketException") ||
-        error.toString().contains(ErrorsConstants.noInternet)) {
-      errorGetted = ErrorsConstants.noInternet;
-    } else if (error.toString().contains(ErrorsConstants.timeout)) {
-      errorGetted = ErrorsConstants.timeout;
-    } else if (error is String) {
-      errorGetted = error;
-      if (!ErrorsConstants.existsKey(error)) {
-        errorGetted = defaultError ?? error;
-      }
-    } else if (error is Exception) {
-      if (error.toString() == Exception().toString()) {
-        errorGetted = defaultError ?? ErrorsConstants.unknownError;
-      } else {
-        errorGetted = error.toString();
-      }
+    if (error is String) {
+      errorGetted = ErrorsConstants.existsKey(error)
+          ? error
+          : (defaultError ?? error);
+    } else {
+      errorGetted = defaultError ?? ErrorsConstants.unknownError;
     }
     return PetitionStatusEntity(
       status: PetitionStatus.failed,

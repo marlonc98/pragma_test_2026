@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:pragma_test/domain/entities/cat_entity.dart';
-import 'package:pragma_test/presentation/theme/app_colors.dart';
 import 'package:pragma_test/presentation/ui/widgets/images/image_network_with_load_widget.dart';
 
 class CatCardWidget extends StatelessWidget {
