@@ -25,34 +25,37 @@ class CatsPageScreen extends StatelessWidget {
             waitSearch: true,
           ),
           SliverFillRemaining(
-            child: Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: PagingListener<int, CatEntity>(
-                controller: vm.pagingController,
-                builder: (context, state, fetchNextPage) =>
-                    PagedListView<int, CatEntity>(
-                      padding: const EdgeInsets.all(0),
-                      state: state,
-                      fetchNextPage: fetchNextPage,
-                      builderDelegate: PagedChildBuilderDelegate<CatEntity>(
-                        firstPageErrorIndicatorBuilder: (context) =>
-                            ErrorLoadingWidget(
-                              onRetry: vm.handleReload,
-                              error: vm.localization.translate(
-                                vm.pagingController.error?.toString() ?? ErrorsConstants.errorGettingCats,
+            child: RefreshIndicator(
+              onRefresh: vm.handleReload,
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: PagingListener<int, CatEntity>(
+                  controller: vm.pagingController,
+                  builder: (context, state, fetchNextPage) =>
+                      PagedListView<int, CatEntity>(
+                        padding: const EdgeInsets.all(0),
+                        state: state,
+                        fetchNextPage: fetchNextPage,
+                        builderDelegate: PagedChildBuilderDelegate<CatEntity>(
+                          firstPageErrorIndicatorBuilder: (context) =>
+                              ErrorLoadingWidget(
+                                onRetry: vm.handleReload,
+                                error: vm.localization.translate(
+                                  vm.pagingController.error?.toString() ?? ErrorsConstants.errorGettingCats,
+                                ),
                               ),
+                          noItemsFoundIndicatorBuilder: (context) =>
+                              NoResultsWidget(onRetry: vm.handleReload),
+                          itemBuilder: (context, item, index) => Container(
+                            margin: const EdgeInsets.only(bottom: 8),
+                            child: CatCardWidget(
+                              cat: item,
+                              onTap: () => vm.handleTapCatCard(item),
                             ),
-                        noItemsFoundIndicatorBuilder: (context) =>
-                            NoResultsWidget(onRetry: vm.handleReload),
-                        itemBuilder: (context, item, index) => Container(
-                          margin: const EdgeInsets.only(bottom: 8),
-                          child: CatCardWidget(
-                            cat: item,
-                            onTap: () => vm.handleTapCatCard(item),
                           ),
                         ),
                       ),
-                    ),
+                ),
               ),
             ),
           ),

@@ -30,7 +30,7 @@ class CatsPageViewModel extends ViewModel<CatsPage> {
     pagingController.refresh();
   }
 
-  void handleReload() {
+  Future<void> handleReload() async {
     pagingController.refresh();
   }
 
