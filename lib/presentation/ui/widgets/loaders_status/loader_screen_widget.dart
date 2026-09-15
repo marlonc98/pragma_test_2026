@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:pragma_test/domain/entities/petition_status_entity.dart';
+import 'package:pragma_test/domain/entities/search_result_entity.dart';
 import 'package:pragma_test/presentation/states/localization_state_impl.dart';
 import 'package:pragma_test/presentation/ui/widgets/loaders_status/error_loading_widget.dart';
 import 'package:pragma_test/presentation/ui/widgets/loaders_status/loading_widget.dart';
@@ -28,8 +29,8 @@ Widget? getIconNoResults({
 
 enum FullSizeOptions { inExpanded, inContainer, notFullSize }
 
-class LoaderScreenWidget extends StatelessWidget {
-  final PetitionStatusEntity status;
+class LoaderScreenWidget<T> extends StatelessWidget {
+  final PetitionStatusEntity<T> status;
   final bool noResultsScreen;
   final bool noResultsSmall;
   final FullSizeOptions fullSize;
@@ -50,7 +51,7 @@ class LoaderScreenWidget extends StatelessWidget {
   final IconData? iconNoResultsIcon;
   final Widget? customNoResults;
 
-  final WidgetBuilder builder;
+  final Widget Function(BuildContext context, T data) builder;
 
   const LoaderScreenWidget({
     super.key,
@@ -116,13 +117,10 @@ class LoaderScreenWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final i18n = context.watch<LocalizationStateImpl>().translate;
-    final data =
-        status.data != null &&
-            status.data.runtimeType.toString() == 'SearchResultEntity'
-        ? status.data.data
-        : status.data;
+    final T? data = status.data;
     final dataIsNull =
         data == null ||
+        (data is SearchResultEntity ? data.isEmpty : false) ||
         (data is List ? data.isEmpty : false) ||
         (data is Map ? data.isEmpty : false);
 
@@ -168,6 +166,11 @@ class LoaderScreenWidget extends StatelessWidget {
         dataIsNull,
       );
     }
-    return builder(context);
+    assert(
+      data != null || allowNull,
+      'LoaderScreenWidget: builder reached with null data; use a nullable T '
+      '(e.g. LoaderScreenWidget<Cat?>) when allowNull is true.',
+    );
+    return builder(context, data as T);
   }
 }

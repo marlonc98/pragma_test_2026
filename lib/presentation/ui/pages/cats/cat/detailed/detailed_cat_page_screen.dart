@@ -19,14 +19,14 @@ class DetailedCatPageScreen extends StatelessWidget {
       appBar: AppBar(
         title: Text(vm.cat.data?.name ?? i18n.translate(TextConstants.detailedCatPageDefaultTitle)),
       ),
-      body: LoaderScreenWidget(status: vm.cat, 
+      body: LoaderScreenWidget(status: vm.cat,
       noResultsScreen: true,
       onRetry: vm.handleLoadCat,
-      builder: (context)=>
+      builder: (context, cat)=>
        Column(
               children: [
                 ImageNetworkWithLoadWidget(
-                  vm.cat.data!.image,
+                  cat.image,
                   height: MediaQuery.of(context).size.height * 0.4,
                   fit: BoxFit.cover,
                 ),

@@ -24,6 +24,8 @@ class SearchResultEntity<T> {
         lastpage: 0);
   }
 
+  bool get isEmpty => data.isEmpty;
+
   @override
   String toString() {
     return 'SearchResultEntity{currentPage: $currentPage, totalItems: $totalItems, data: $data, itemsPerPage: $itemsPerPage, lastpage: $lastpage}';

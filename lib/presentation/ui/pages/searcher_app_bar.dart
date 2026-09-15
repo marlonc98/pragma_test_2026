@@ -4,12 +4,12 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:pragma_test/presentation/ui/utils/functions_helper.dart';
 
-class SearcherAppBar extends StatefulWidget implements PreferredSizeWidget {
+class SearcherAppBarWidget extends StatefulWidget implements PreferredSizeWidget {
   final Function(String) onSearch;
   final String title;
   final bool waitSearch;
 
-  const SearcherAppBar({
+  const SearcherAppBarWidget({
     super.key,
     required this.title,
     required this.onSearch,
@@ -17,13 +17,13 @@ class SearcherAppBar extends StatefulWidget implements PreferredSizeWidget {
   });
 
   @override
-  SearcherAppBarState createState() => SearcherAppBarState();
+  SearcherAppBarWidgetState createState() => SearcherAppBarWidgetState();
 
   @override
   Size get preferredSize => const Size.fromHeight(kToolbarHeight);
 }
 
-class SearcherAppBarState extends State<SearcherAppBar> {
+class SearcherAppBarWidgetState extends State<SearcherAppBarWidget> {
   bool searching = false;
   final TextEditingController _textController = TextEditingController();
   Timer? _debounce;
@@ -52,7 +52,6 @@ class SearcherAppBarState extends State<SearcherAppBar> {
   @override
   SliverAppBar build(BuildContext context) {
     return SliverAppBar(
-      backgroundColor: Theme.of(context).colorScheme.primary,
       floating: true,
       title: searching
           ? Row(
@@ -63,6 +62,11 @@ class SearcherAppBarState extends State<SearcherAppBar> {
                     controller: _textController,
                     onChanged: _onKeyDownSearch,
                     onSubmitted: widget.onSearch,
+                    backgroundColor: Colors.white.withValues(alpha: 0.15),
+                    itemColor: Colors.white,
+                    placeholderStyle: const TextStyle(
+                      color: Colors.white70,
+                    ),
                     style: TextStyle(
                       color: Theme.of(context).appBarTheme.iconTheme?.color,
                     ),
