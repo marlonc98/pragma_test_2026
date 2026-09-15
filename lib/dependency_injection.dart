@@ -1,9 +1,9 @@
 import 'package:get_it/get_it.dart';
-import 'package:pragma_test/data/cat/cat_repository_dev.dart';
-import 'package:pragma_test/data/cat/cat_repository_impl.dart';
-import 'package:pragma_test/data/cat/cat_repository_mock.dart';
-import 'package:pragma_test/data/localization/localization_repository_impl.dart';
-import 'package:pragma_test/data/localization/localization_repository_mock.dart';
+import 'package:pragma_test/data/repositories/cat/cat_repository_dev.dart';
+import 'package:pragma_test/data/repositories/cat/cat_repository_impl.dart';
+import 'package:pragma_test/data/repositories/cat/cat_repository_mock.dart';
+import 'package:pragma_test/data/repositories/localization/localization_repository_impl.dart';
+import 'package:pragma_test/data/repositories/localization/localization_repository_mock.dart';
 import 'package:pragma_test/domain/repositories/cat_repository.dart';
 import 'package:pragma_test/domain/repositories/localization_repository.dart';
 import 'package:pragma_test/domain/states/localization_state.dart';

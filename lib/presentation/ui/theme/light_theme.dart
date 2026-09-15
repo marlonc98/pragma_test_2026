@@ -10,6 +10,11 @@ ThemeData lightTheme = ThemeData.light().copyWith(
     backgroundColor: AppColors.brownMain,
     elevation: 0,
     iconTheme: IconThemeData(color: Colors.white),
+    titleTextStyle: TextStyle(
+      color: Colors.white,
+      fontSize: 20,
+      fontWeight: FontWeight.bold,
+    ),
   ),
   textTheme:  TextTheme(
     titleMedium: TextStyle(

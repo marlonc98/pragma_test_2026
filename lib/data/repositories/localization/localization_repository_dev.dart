@@ -1,5 +1,5 @@
-import 'package:pragma_test/data/localization/api/get_language_api_impl.dart';
-import 'package:pragma_test/data/localization/api/get_translatations_api_impl.dart';
+import 'package:pragma_test/data/repositories/localization/api/get_language_api_impl.dart';
+import 'package:pragma_test/data/repositories/localization/api/get_translatations_api_impl.dart';
 import 'package:pragma_test/domain/repositories/localization_repository.dart';
 
 class LocalizationRepositoryDev extends LocalizationRepository {

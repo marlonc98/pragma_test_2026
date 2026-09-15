@@ -62,6 +62,11 @@ class SearcherAppBarWidgetState extends State<SearcherAppBarWidget> {
                     controller: _textController,
                     onChanged: _onKeyDownSearch,
                     onSubmitted: widget.onSearch,
+                    backgroundColor: Colors.white.withValues(alpha: 0.15),
+                    itemColor: Colors.white,
+                    placeholderStyle: const TextStyle(
+                      color: Colors.white70,
+                    ),
                     style: TextStyle(
                       color: Theme.of(context).appBarTheme.iconTheme?.color,
                     ),
@@ -77,10 +82,7 @@ class SearcherAppBarWidgetState extends State<SearcherAppBarWidget> {
               children: [
                 const SizedBox(width: 16),
                 Expanded(
-                  child: Text(widget.title, textAlign: TextAlign.center, style: TextStyle(
-                    color:Colors.white,
-                    fontWeight: FontWeight.bold,
-                  )),
+                  child: Text(widget.title, textAlign: TextAlign.center),
                 ),
                 IconButton(
                   onPressed: () => toogleSearch(true),
