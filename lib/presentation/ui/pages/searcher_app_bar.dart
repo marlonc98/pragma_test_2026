@@ -77,7 +77,10 @@ class SearcherAppBarWidgetState extends State<SearcherAppBarWidget> {
               children: [
                 const SizedBox(width: 16),
                 Expanded(
-                  child: Text(widget.title, textAlign: TextAlign.center),
+                  child: Text(widget.title, textAlign: TextAlign.center, style: TextStyle(
+                    color:Colors.white,
+                    fontWeight: FontWeight.bold,
+                  )),
                 ),
                 IconButton(
                   onPressed: () => toogleSearch(true),
