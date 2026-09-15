@@ -7,6 +7,7 @@ import 'package:pragma_test/presentation/ui/pages/cats/cats_page_view_model.dart
 import 'package:pragma_test/presentation/ui/pages/cats/widgets/cat_card_widget.dart';
 import 'package:pragma_test/presentation/ui/pages/searcher_app_bar.dart';
 import 'package:pragma_test/presentation/ui/widgets/loaders_status/error_loading_widget.dart';
+import 'package:pragma_test/presentation/ui/widgets/loaders_status/loading_widget.dart';
 import 'package:pragma_test/presentation/ui/widgets/loaders_status/no_results_widget.dart';
 import 'package:provider/provider.dart';
 
@@ -37,6 +38,7 @@ class CatsPageScreen extends StatelessWidget {
                         state: state,
                         fetchNextPage: fetchNextPage,
                         builderDelegate: PagedChildBuilderDelegate<CatEntity>(
+                          firstPageProgressIndicatorBuilder: (context) => const LoadingWidget(),
                           firstPageErrorIndicatorBuilder: (context) =>
                               ErrorLoadingWidget(
                                 onRetry: vm.handleReload,
