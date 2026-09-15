@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pragma_test/domain/entities/cat_entity.dart';
+import 'package:pragma_test/presentation/constants/image_constants.dart';
 import 'package:pragma_test/presentation/ui/widgets/images/image_network_with_load_widget.dart';
 
 class CatCardWidget extends StatelessWidget {
@@ -19,6 +20,7 @@ class CatCardWidget extends StatelessWidget {
               cat.image,
               height: 250,
               fit: BoxFit.cover,
+              defaultImage: ImageConstants.defaultImage,
               width: double.infinity,
             ),
             Positioned(
