@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:pragma_test/presentation/constants/text_constants.dart';
 import 'package:pragma_test/presentation/states/localization_state_impl.dart';
 import 'package:pragma_test/presentation/ui/widgets/buttons/button_widget.dart';

@@ -25,13 +25,7 @@ class ListItemWidget extends StatelessWidget {
               ),
             if (title != null && value != null) const SizedBox(height: 2),
             if (value != null)
-              Text(
-                value ?? "",
-                style: const TextStyle(
-                  fontSize: 16,
-                  fontWeight: FontWeight.w300,
-                ),
-              ),
+              Text(value ?? "", style: Theme.of(context).textTheme.bodyMedium),
           ],
         ),
       ),

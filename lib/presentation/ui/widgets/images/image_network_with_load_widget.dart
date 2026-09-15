@@ -1,8 +1,6 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_cache_manager/flutter_cache_manager.dart';
-import 'package:flutter_svg/svg.dart';
-import 'package:pragma_test/presentation/constants/image_constants.dart';
 
 class ImageNetworkWithLoadWidget extends StatefulWidget {
   final String imageUrl;
@@ -74,11 +72,20 @@ class _ImageNetworkWithLoadWidgetState
         width: widget.width ?? double.infinity,
       );
     }
-    return SvgPicture.asset(
-      ImageConstants.splashLoading,
+    return SizedBox(
       height: widget.height ?? 250,
-      fit: widget.fit,
       width: widget.width ?? double.infinity,
+      child: Container(
+        color: Colors.grey[200],
+        child: Center(
+          child: Opacity(
+            opacity: 0.3,
+            child: CircularProgressIndicator(
+              color: Theme.of(context).colorScheme.primary,
+            ),
+          ),
+        ),
+      ),
     );
   }
 

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:pragma_test/presentation/theme/app_colors.dart';
 
 ThemeData lightTheme = ThemeData.light().copyWith(
-  colorScheme: const ColorScheme.dark().copyWith(
+  colorScheme: const ColorScheme.light().copyWith(
     primary: AppColors.brownMain,
   ),
   scaffoldBackgroundColor: const Color(0xFFFFE6DF),
