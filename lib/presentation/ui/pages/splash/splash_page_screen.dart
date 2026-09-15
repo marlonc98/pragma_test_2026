@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:lottie/lottie.dart';
-import 'package:pragma_test/presentation/constants/image_constants.dart';
 import 'package:pragma_test/presentation/constants/text_constants.dart';
 import 'package:pragma_test/presentation/states/localization_state_impl.dart';
 import 'package:pragma_test/presentation/ui/pages/splash/splash_page_view_model.dart';
+import 'package:pragma_test/presentation/ui/widgets/images/splash_loading_lottie_widget.dart';
 import 'package:provider/provider.dart';
 
 class SplashPageScreen extends StatelessWidget {
@@ -28,7 +27,7 @@ class SplashPageScreen extends StatelessWidget {
                 color: Colors.white,
               ),
             ),
-            Lottie.asset(ImageConstants.splashLoading, height: 200),
+            const SplashLoadingLottieWidget(),
             const SizedBox(height: 4),
             if (vm.packageInfo != null)
               Padding(

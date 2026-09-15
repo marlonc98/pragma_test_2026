@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:lottie/lottie.dart';
-import 'package:pragma_test/presentation/constants/image_constants.dart';
 import 'package:pragma_test/presentation/constants/text_constants.dart';
 import 'package:pragma_test/presentation/states/localization_state_impl.dart';
 import 'package:pragma_test/presentation/ui/widgets/buttons/button_widget.dart';
+import 'package:pragma_test/presentation/ui/widgets/images/splash_loading_lottie_widget.dart';
 import 'package:provider/provider.dart';
 
 class NoResultsWidget extends StatelessWidget {
@@ -33,7 +32,7 @@ class NoResultsWidget extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Lottie.asset(ImageConstants.splashLoading, height: 200),
+            const SplashLoadingLottieWidget(),
             const SizedBox(height: 20),
             if (title != null && title!.isNotEmpty) ...[
               Text(

@@ -17,7 +17,7 @@ class CatRepositoryMock extends CatRepository {
   @override
   Future<PetitionStatusEntity<CatEntity>> getCatById(String id) async {
     await Future.delayed(const Duration(seconds: 1));
-    return PetitionStatusEntity.fromError(ErrorsConstants.errorGettingCats);
+    return PetitionStatusEntity.success(data: fakeCat);
   }
 
   @override

@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:lottie/lottie.dart';
-import 'package:pragma_test/presentation/constants/image_constants.dart';
 import 'package:pragma_test/presentation/constants/text_constants.dart';
 import 'package:pragma_test/presentation/states/localization_state_impl.dart';
 import 'package:pragma_test/presentation/ui/widgets/buttons/button_widget.dart';
+import 'package:pragma_test/presentation/ui/widgets/images/splash_loading_lottie_widget.dart';
 import 'package:provider/provider.dart';
 
 class ErrorLoadingWidget extends StatelessWidget {
@@ -22,7 +21,7 @@ class ErrorLoadingWidget extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Lottie.asset(ImageConstants.splashLoading, height: 200),
+            const SplashLoadingLottieWidget(),
             const SizedBox(height: 16),
             Text(
               error ?? i18n(TextConstants.errorLoadingWidgetAnErrorOccurred),

@@ -1,19 +1,26 @@
 import 'package:flutter/material.dart';
+import 'package:pragma_test/presentation/theme/app_colors.dart';
 
-const Color colorMain = Color(0xFFBC6249);
 ThemeData lightTheme = ThemeData.light().copyWith(
   colorScheme: const ColorScheme.dark().copyWith(
-    primary: colorMain,
+    primary: AppColors.brownMain,
   ),
   scaffoldBackgroundColor: const Color(0xFFFFE6DF),
   appBarTheme: const AppBarTheme(
-    backgroundColor: colorMain,
+    backgroundColor: AppColors.brownMain,
     elevation: 0,
     iconTheme: IconThemeData(color: Colors.white),
   ),
+  textTheme:  TextTheme(
+    titleMedium: TextStyle(
+      fontSize: 16,
+      fontWeight: FontWeight.bold,
+      color: AppColors.brownMain,
+    ),
+  ),
   textButtonTheme: TextButtonThemeData(
     style: TextButton.styleFrom(
-      backgroundColor: colorMain,
+      backgroundColor: AppColors.brownMain,
       foregroundColor: Colors.white,
       // shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
     ),
