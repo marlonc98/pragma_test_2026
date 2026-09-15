@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';
+import 'package:pragma_test/domain/contstants/errors_constants.dart';
 import 'package:pragma_test/domain/entities/cat_entity.dart';
 import 'package:pragma_test/presentation/constants/text_constants.dart';
 import 'package:pragma_test/presentation/ui/pages/cats/cats_page_view_model.dart';
 import 'package:pragma_test/presentation/ui/pages/cats/widgets/cat_card_widget.dart';
 import 'package:pragma_test/presentation/ui/pages/searcher_app_bar.dart';
+import 'package:pragma_test/presentation/ui/widgets/loaders_status/error_loading_widget.dart';
+import 'package:pragma_test/presentation/ui/widgets/loaders_status/no_results_widget.dart';
 import 'package:provider/provider.dart';
 
 class CatsPageScreen extends StatelessWidget {
@@ -32,6 +35,15 @@ class CatsPageScreen extends StatelessWidget {
                       state: state,
                       fetchNextPage: fetchNextPage,
                       builderDelegate: PagedChildBuilderDelegate<CatEntity>(
+                        firstPageErrorIndicatorBuilder: (context) =>
+                            ErrorLoadingWidget(
+                              onRetry: vm.handleReload,
+                              error: vm.localization.translate(
+                                vm.pagingController.error?.toString() ?? ErrorsConstants.errorGettingCats,
+                              ),
+                            ),
+                        noItemsFoundIndicatorBuilder: (context) =>
+                            NoResultsWidget(onRetry: vm.handleReload),
                         itemBuilder: (context, item, index) => Container(
                           margin: const EdgeInsets.only(bottom: 8),
                           child: CatCardWidget(

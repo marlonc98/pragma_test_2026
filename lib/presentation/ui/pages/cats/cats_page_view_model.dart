@@ -30,6 +30,10 @@ class CatsPageViewModel extends ViewModel<CatsPage> {
     pagingController.refresh();
   }
 
+  void handleReload() {
+    pagingController.refresh();
+  }
+
   int? _getNextPageKey(PagingState<int, CatEntity> state) {
     final lastPageLength = state.pages?.lastOrNull?.length;
     if (lastPageLength != null && lastPageLength < _itemsPerPage) return null;
@@ -50,7 +54,7 @@ class CatsPageViewModel extends ViewModel<CatsPage> {
         text: localization.translate(response.error ?? ErrorsConstants.errorGettingCats),
         error: true,
       );
-      throw Exception(localization.translate(response.error ?? ErrorsConstants.errorGettingCats));
+      throw localization.translate(response.error ?? ErrorsConstants.errorGettingCats);
     }
 
     return response.data?.data ?? [];
