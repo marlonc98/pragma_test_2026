@@ -4,6 +4,7 @@ import 'package:pragma_test/presentation/theme/app_colors.dart';
 ThemeData lightTheme = ThemeData.light().copyWith(
   colorScheme: const ColorScheme.light().copyWith(
     primary: AppColors.brownMain,
+    onSurface: AppColors.brownMain,
   ),
   scaffoldBackgroundColor: const Color(0xFFFFE6DF),
   appBarTheme: const AppBarTheme(
@@ -16,10 +17,14 @@ ThemeData lightTheme = ThemeData.light().copyWith(
       fontWeight: FontWeight.bold,
     ),
   ),
-  textTheme:  TextTheme(
+  textTheme: const TextTheme(
     titleMedium: TextStyle(
       fontSize: 16,
       fontWeight: FontWeight.bold,
+      color: AppColors.brownMain,
+    ),
+    bodyMedium: TextStyle(
+      fontSize: 14,
       color: AppColors.brownMain,
     ),
   ),

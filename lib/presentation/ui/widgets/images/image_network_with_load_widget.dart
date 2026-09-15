@@ -94,7 +94,7 @@ class _ImageNetworkWithLoadWidgetState
       height: widget.height,
       width: widget.width,
       child: Container(
-        color: Colors.grey[200],
+        color: Colors.grey.withAlpha(20),
         child: const Center(child: CircularProgressIndicator()),
       ),
     );
