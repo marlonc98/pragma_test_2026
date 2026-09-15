@@ -12,40 +12,43 @@ class SplashPageScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final i18n = context.watch<LocalizationStateImpl>();
     final vm = context.watch<SplashPageViewModel>();
-    return Container(
-      color: Theme.of(context).colorScheme.primary,
-      child: SafeArea(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            SizedBox(height: MediaQuery.of(context).size.height * 0.5 - 240),
-            Text(
-              i18n.translate(TextConstants.splashPageTitle),
-              style: const TextStyle(
-                fontSize: 40,
-                fontWeight: FontWeight.bold,
-                color: Colors.white,
-              ),
-            ),
-            const SplashLoadingLottieWidget(),
-            const SizedBox(height: 4),
-            if (vm.packageInfo != null)
-              Padding(
-                padding: EdgeInsets.only(bottom: 32),
-                child: Text(
-                  i18n.translate(
-                    TextConstants.versionAndBuild,
-                    values: {
-                      "version": vm.packageInfo!.version,
-                      "build": vm.packageInfo!.buildNumber,
-                    },
-                  ),
-                  style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                    color: Colors.white
-                  ),
+    return Scaffold(
+        backgroundColor: Theme.of(context).colorScheme.primary,
+      body: SafeArea(
+        child: Center(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              SizedBox(height: MediaQuery.of(context).size.height * 0.5 - 240),
+              Text(
+                i18n.translate(TextConstants.splashPageTitle),
+                style: const TextStyle(
+                  fontSize: 40,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white,
                 ),
               ),
-          ],
+              const SplashLoadingLottieWidget(),
+              const SizedBox(height: 4),
+              if (vm.packageInfo != null)
+                Padding(
+                  padding: EdgeInsets.only(bottom: 32),
+                  child: Text(
+                    i18n.translate(
+                      TextConstants.versionAndBuild,
+                      values: {
+                        "version": vm.packageInfo!.version,
+                        "build": vm.packageInfo!.buildNumber,
+                      },
+                    ),
+                    style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                      color: Colors.white
+                    ),
+                  ),
+                ),
+            ],
+          ),
         ),
       ),
     );
