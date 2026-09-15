@@ -44,6 +44,7 @@ dependencies:
   flutter_svg: ^2.3.0
   http: ^1.6.0
   flutter_dotenv: ^5.2.1
+  flutter_launcher_icons: ^0.14.4
 
 dev_dependencies:
   flutter_test:
@@ -101,7 +102,14 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/to/font-from-package
-  
+flutter_launcher_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/images/logo/applogo.png"
+  min_sdk_android: 24 # android min sdk min:16, default 21
+  adaptive_icon_background: "#ffffff"
+  adaptive_icon_foreground: "assets/images/logo/applogo.png"
+
 flavorizr:
   flavors:
     mock:

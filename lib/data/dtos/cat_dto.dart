@@ -7,7 +7,7 @@ class CatDto {
       name: json['name'],
       origin: json['origin'],
       countryCode: json['country_code'],
-      image: json['image_url'] ??
+      image: json['image']?["url"] ??
           "https://cdn2.thecatapi.com/images/${json['reference_image_id']}.jpg",
       adaptability: json['adaptability'],
       affectionLevel: json['affection_level'],

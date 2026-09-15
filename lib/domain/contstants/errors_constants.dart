@@ -16,7 +16,9 @@ class ErrorsConstants {
       unknownError,
       noInternet,
       timeout,
+      notFound,
       errorGettingCats,
+      errorGettingCat,
     ].contains(key);
   }
 }

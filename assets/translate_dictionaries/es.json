@@ -1,11 +1,18 @@
 {
-    "notFoundWidgetNotResults": "No se han encontrado resultados",
-    "notFoundWidgetGoBack": "Go Back",
+    "retry": "Reintentar",
 
     "splashPageTitle": "CatBreeds",
+    "versionAndBuild": "Versión {version} ({build})",
+
+    "errorLoadingWidgetAnErrorOccurred": "Ha ocurrido un error",
+
+    "noResultsWidgetTitle": "Sin resultados",
+    "noResultsWidgetDescription": "No se encontraron resultados para tu búsqueda",
+    "noResultsWidgetButton": "Reintentar",
 
     "catListPageTitle": "Gatos en CatBreeds",
 
+    "detailedCatPageDefaultTitle": "Detalle del gato",
     "detailedCatPageDescription": "Descripción",
     "detailedCatPageOrigin": "Origen",
     "detailedCatPageTemperament": "Temperamento",
@@ -17,7 +24,11 @@
     "detailedCatPageWeight": "Peso",
     "detailedCatPageCountryCode": "Código de país",
 
-    "noConnectionError": "Sin conexión a internet",
-    "catNotFound": "No se ha encontrado ningún gato",
-    "errorGettingCats": "Error al obtener los gatos"
+    "unauthorized": "No autorizado",
+    "unknownError": "Ha ocurrido un error desconocido",
+    "noInternet": "Sin conexión a internet",
+    "timeout": "La petición ha tardado demasiado tiempo en responder",
+    "notFound": "No se ha encontrado",
+    "errorGettingCats": "No se pudieron obtener los gatos",
+    "errorGettingCat": "No se pudo obtener el gato"
 }

@@ -1,5 +1,5 @@
 import 'package:pragma_test/data/repositories/cat/api/get_cat_by_id_api_impl.dart';
-import 'package:pragma_test/data/repositories/cat/api/search_car_api_impl.dart';
+import 'package:pragma_test/data/repositories/cat/api/search_cat_api_impl.dart';
 import 'package:pragma_test/domain/entities/cat_entity.dart';
 import 'package:pragma_test/domain/entities/petition_status_entity.dart';
 import 'package:pragma_test/domain/entities/search_result_entity.dart';
